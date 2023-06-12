@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="yourpath/all-animation.css" />
+    <link rel="stylesheet" href="magic-master/dist/magic.min.css">
+    <title>Lightbox Gallery</title>
+</head>
+<body id="body">
+    <div class="container my-5">
+        <div class="row g-3">
+            <div class="title d-flex justify-content-around align-items-center align-middle">
+                <h1 class="h1 text-dark animate__animated animate__backInDown">Modern and Power Lighbox Gallery</h1>
+                <div class="form-check form-switch animate__animated animate__backInDown">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label text-dark label ms-1" for="flexSwitchCheckDefault">Dark Mode</label>
+                </div>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery A #1">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery B #2">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery C #3">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery A #1">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery B #2">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery C #3">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery A #1">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery B #2">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+            <div id="magicAnimation" class="col-12 col-md-6 col-lg-4 magictime vanishIn">
+                <a href="https://picsum.photos/600/600" data-fancybox="gallery-a" data-caption="Gallery C #3">
+                    <img src="https://picsum.photos/600/600" class="img-fluid"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            Thumbs: {
+                type: "modern",
+            },
+        });
+
+        
+
+        Fancybox.bind("#gallery a", {
+            groupAll: true,
+        });
+
+        // function animation() {
+        //     const magicAnimation = document.querySelector("#magicAnimation");
+        //     magicAnimation.classList.add("magictime", "vanishIn");
+        // }
+        // setInterval(animation, 200);
+        
+        const darkBtn = document.querySelector("#flexSwitchCheckDefault");
+        const h1 = document.querySelector(".h1");
+        const label = document.querySelector(".label");
+
+        darkBtn.addEventListener("click", function() {
+            if(!document.getElementById("body").classList.contains("bg-dark")) {
+                document.getElementById("body").classList.add("bg-dark");
+                h1.classList.remove("text-dark");
+                h1.classList.add("text-light");
+                label.classList.remove("text-dark");
+                label.classList.add("text-light");
+                label.innerHTML = "Light Mode";
+
+            } else {
+                document.getElementById("body").classList.remove("bg-dark");
+                h1.classList.remove("text-light");
+                h1.classList.add("text-dark");
+                label.classList.remove("text-light");
+                label.classList.add("text-dark");
+                label.innerHTML = "Dark Mode";
+            }
+        });
+
+
+    </script>
+</body>
+</html>
